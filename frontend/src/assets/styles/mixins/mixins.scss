@@ -1,0 +1,23 @@
+@mixin shadow-border {
+  box-shadow: 0 0 10px #cacaca;
+  border-radius: 5px;
+}
+
+@mixin form-styles {
+  @include shadow-border;
+  padding: 60px 60px 20px;
+  box-sizing: border-box;
+  align-self: center;
+  background-color: rgba(255, 255, 255, 0.3);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+@mixin error-message {
+  position: fixed;
+  top: 80px;
+  bottom: unset;
+  right: 20px;
+  min-width: 400px;
+  max-width: 600px;
+}

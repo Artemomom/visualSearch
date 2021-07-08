@@ -1,0 +1,31 @@
+version: "3.4"
+services:
+  style_backend:
+    build:
+      context: ../
+      dockerfile: local-run/backend/Dockerfile
+      args:
+        STYLE_COEFFICIENT: 0.7
+        CONTENT_COEFFICIENT: 0.3
+    image: style_backend_local
+    container_name: style_backend_local
+    volumes:
+      - /Users/aivashchenko/Documents/floralFiles/model:/usr/src/app/model
+    ports:
+      - "5000:5000"
+    environment:
+      - NUM_WORKERS=1
+      - TORCH_HOME=/usr/src/app/model
+  style_frontend:
+    build:
+      context: ../frontend
+      dockerfile: ../local-run/frontend/Dockerfile
+      args:
+        REACT_APP_API_URL: http://localhost/api
+        REACT_APP_ROUTE_URL: /
+    image: style_frontend_local
+    container_name: style_frontend_local
+    ports:
+      - "80:8080"
+    environment:
+      - API_BASE_URL=http://style_backend_local:5000

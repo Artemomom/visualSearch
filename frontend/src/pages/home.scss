@@ -1,0 +1,68 @@
+@import '../assets/styles';
+
+.container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  .error-message {
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0s, opacity 0.5s linear;
+    .MuiAlert-root {
+      bottom: 0;
+      position: fixed;
+      right: 0;
+      min-width: 100%;
+      box-sizing: border-box;
+      .MuiAlertTitle-root {
+        text-align: start;
+      }
+    }
+    &.hide {
+      visibility: hidden;
+      opacity: 0;
+    }
+  }
+}
+
+@media (min-width: $tablet-width) and (max-width: $desktop-width) {
+  .container {
+    .error-message {
+      .MuiAlert-root {
+        @include error-message;
+      }
+    }
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .container {
+    .error-message {
+      .MuiAlert-root {
+        @include error-message;
+      }
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    .error-message {
+      .MuiAlert-root {
+        @include error-message;
+      }
+    }
+  }
+}
+
+@media (min-width: 1400px) {
+  .container {
+    .error-message {
+      .MuiAlert-root {
+        @include error-message;
+      }
+    }
+  }
+}

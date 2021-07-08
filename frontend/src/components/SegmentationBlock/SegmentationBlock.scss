@@ -1,0 +1,40 @@
+@import '../../assets/styles';
+
+.segmentation-container {
+  width: 100%;
+  border: 1px solid #e7e7e7;
+  border-radius: 5px;
+}
+.stats{
+  margin-top: 10px;
+  font-size: 14px;
+  color: #70757a;
+}
+
+@media (min-width: $tablet-width) and (max-width: $desktop-width) {
+  .segmentation-container {
+    width: 80%;
+    @include shadow-border;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .segmentation-container {
+    width: 60%;
+    @include shadow-border;
+  }
+}
+
+@media (min-width: 1200px) {
+  .segmentation-container {
+    width: 50%;
+    @include shadow-border;
+  }
+}
+
+@media (min-width: 1400px) {
+  .segmentation-container {
+    width: 40%;
+    @include shadow-border;
+  }
+}

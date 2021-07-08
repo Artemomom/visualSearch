@@ -1,0 +1,100 @@
+@import '../../assets/styles';
+
+.image-upload-form {
+  width: 100%;
+  margin-top: 200px;
+  margin-bottom: 20px;
+  .title {
+    font-size: 1.7rem;
+    line-height: 40px;
+    font-weight: bold;
+    color: #4b4c4d;
+  }
+  .or {
+    font-weight: bold;
+    color: #4b4c4d;
+  }
+  .button-wrapper {
+    margin: 20px 0;
+    .Mui-disabled {
+      background: transparent;
+      color: #9b9b9b;
+      border: 1px solid #ccc;
+      cursor: not-allowed;
+    }
+  }
+  .thumbContainer {
+    display: flex;
+    margin-top: 16px;
+    align-items: center;
+    flex-direction: column;
+    .thumb {
+      position: relative;
+      border-radius: 2px;
+      border: 1px solid #eaeaea;
+      padding: 4px;
+      box-sizing: border-box;
+      .thumbInner {
+        display: flex;
+        overflow: hidden;
+        .preview-image {
+          display: block;
+          max-width: 100%;
+          max-height: 200px;
+        }
+      }
+      .close-button {
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        color: white;
+        font-size: 14px;
+        font-weight: bold;
+        line-height: 22px;
+        background: #ff8516;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+    }
+  }
+  .text-input {
+    width: 100%;
+  }
+  .loader-wrapper {
+    height: 45px;
+    .MuiCircularProgress-colorPrimary {
+      color: #ff8516;
+    }
+  }
+}
+
+@media (min-width: $tablet-width) and (max-width: $desktop-width) {
+  .image-upload-form {
+    @include form-styles;
+    width: 80%;
+    top: 40%;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .image-upload-form {
+    @include form-styles;
+    width: 60%;
+    left: 25%;
+    right: 25%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .image-upload-form {
+    width: 50%;
+  }
+}
+
+@media (min-width: 1400px) {
+  .image-upload-form {
+    width: 40%;
+  }
+}
